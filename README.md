@@ -137,14 +137,26 @@ su -
 
 When участники *именуют сценарии*, выполняют команды и анализируют их вывод и поведение
 ----
-- Сценарий "Как ...?"
+- Сценарий "Как получить информацию по системе?"
 ```shell
-podman version # TODO: собственные пометки участников для будущего использования в проектах
+podman version 
+    Client:       Podman Engine
+    Version:      4.1.1
+    API Version:  4.1.1
+    Go Version:   go1.17.10
+    Built:        Wed Aug  3 13:28:23 2022
+    OS/Arch:      linux/amd64 <- ЭТО x86 intell
 podman system info
+    *дохрена строчек*
+    можно глянуть папки с образами и контейнерами
 podman system df
+    TYPE           TOTAL       ACTIVE      SIZE        RECLAIMABLE
+    Images         0           0           0B          0B (0%)
+    Containers     0           0           0B          0B (0%)
+    Local Volumes  0           0           0B          0B (0%)
 ```
 
-- Сценарий "Как ...?"
+- Сценарий "Как подключиться к корпоративном хранилищу image?"
 ```shell
 podman logout
 podman login {{ registry-host }}
